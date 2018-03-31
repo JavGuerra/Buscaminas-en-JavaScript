@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Buscaminas en JavaScript</title>
+    <meta name="description" content="Juego del Buscaminas en JavaScript" />
+    <meta name="keywords" content="buscaminas, juego, ejercicio" />
+    <meta name="author" content="Javier Guerra" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+
+    <link rel="icon" href="imgs/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black+Ops+One|Oswald" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Código JavaScript del buscaminas -->
+    <script src="js/buscaminas.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- Cabecera -->
+        <header class="titulo page-header">
+            <h1 class="text-center"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Buscaminas <small>en&nbsp;JavaScript</small></h1>
+        </header>
+
+        <!-- Zona central -->
+        <div class="row">
+
+
+            <!-- Juego -->
+            <main class="col-xs-12 col-sm-12 col-md-10">
+
+                <!-- Información -->
+                <div class="alert alert-info ayuda" id="ayuda" role="alert">
+                    <img class="img-responsive pull-left" src="imgs/marino.png" alt="Marino" />
+                    <span class="pull-right glyphicon glyphicon-remove" id="btnAyuda" aria-role="link" title="Cerrar" aria-label="Botón de cerrar"></span>
+                    <h2><strong>Instrucciones</strong></h2>
+                    <p class="lead">En primer lugar debes generar el tablero indicando un ancho y alto de entre 5 y 40 casillas cada uno. A continuación trata de buscar las minas haciendo clic sobre cualquier casilla. Los intentos restantes irán decreciendo si fallas. ¡Suerte!</p>
+                </div>
+
+                <!-- Alerta -->
+                <div class="alert alert-info mensajes" id="mensaje" role="alert">
+                    <span class="ocultar pull-right glyphicon glyphicon-question-sign" id="btnInfo" role="link" title="Instrucciones" aria-label="Mostrar instrucciones"></span>
+                    <span id="mensajetexto">¿Te apetece una partida?</span>
+                </div>
+
+                <!-- Tablero -->
+                <div id="tablero" class="tablero">
+
+                    <!-- miTablero -->
+
+                    <!-- Si Javascript está deshabilitado -->
+                    <noscript><p>Debes habilitar JavaScript para poder jugar al Buscaminas.</p></noscript>
+
+                </div>
+
+            </main>
+            <!-- / Juego -->
+
+
+            <!-- Entrada de datos -->
+            <aside class="col-xs-12 col-sm-12 col-md-2">
+
+                <img class="img-responsive center-block ocultarLogo" src="imgs/mina.png" alt="Mina" />
+
+                <form class="form-inline" id="formulario" role="form">
+                    <fieldset class="form-group">
+                        <legend>
+                            <h2>Información del tablero</h2>
+                        </legend>
+
+                        <div class="form-group form-control-inline col-sm-3 col-md-12 col-lg-12">
+                            <label class="control-label" for="ancho">Ancho:</label>
+                            <input type="number" class="form-control" id="ancho" name="ancho" placeholder="Introduce el ancho" title="Un numero entre 5 y 50" required />
+                            <span class="ocultar glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="form-group form-control-inline col-sm-3 col-md-12 col-lg-12">
+                            <label class="control-label" for="alto">Alto:</label>
+                            <input type="number" class="form-control" id="alto" name="alto" placeholder="Introduce el alto" title="Un numero entre 5 y 50" required />
+                            <span class="ocultar glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="form-group col-sm-3 col-md-12 col-lg-12">
+                            <label class="control-label" for="intentos">Intentos restantes:</label>
+                            <input type="text" class="form-control" id="intentos" readonly />
+                        </div>
+
+                        <div class="form-group col-sm-3 col-md-12 col-lg-12">
+                            <label class="control-label" for="minas">Minas encontradas:</label>
+                            <input type="text" class="form-control" id="minas" value="0" readonly />
+                        </div>
+
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="jugar">
+                        <span class="glyphicon glyphicon-th" aria-hidden="true"></span> Jugar</button>
+
+                    </fieldset>
+                </form>
+
+            </aside>
+            <!-- / Entrada de datos -->
+
+
+        </div>
+        <!-- / Zona central -->
+
+
+        <!-- Pie -->
+        <footer>
+            <a data-toggle="modal" href="#myModal"><span class="glyphicon glyphicon-info-sign" aria-hidden="true" role="link"></span> Sobre la aplicación</a>
+            <a href="https://creativecommons.org/licenses/by/4.0/" role="link"><img src="imgs/cc-by.png" alt="Creative Commons CC-BY 4.0" /></a>
+            <a href="http://www.tawdis.net/"><img src="imgs/taw.png" alt="Accesibilidad web" role="link" /></a>
+            <a href="https://www.w3.org/WAI/intro/aria"><img src="imgs/aria.png" alt="Accesibilidad de contenidos dinámicos" role="link" /></a>
+        </footer>
+
+
+        <!-- Ventana modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h2 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Sobre la aplicación</h2>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <h3>Información</h3>
+
+                        <p>Aplicación: Buscaminas en JavaScript v.1.0, por <a href="mailto:javguerra@badared.com" role="link">Javier Guerra</a>, en abril de 2017.</p>
+                        <p>Licencia Creative Commons de <a href="https://creativecommons.org/licenses/by/4.0/" role="link">Atribución</a> (CC-BY)</p>
+                        <p>Estándares: <a href="http://www.tawdis.net/" role="link">TAW: Accesibilidad web</a> |
+                            <a href="https://www.w3.org/WAI/intro/aria" role="link">WAI-ARIA: Accesibilidad de contenidos dinámicos</a></p>
+
+                        <h3>Característricas</h3>
+                        
+                        <h4>Graficas</h4>
+                        <ul>
+                            <li>Se usa <a href="http://getbootstrap.com/" role="link">Bootstrap</a>.</li>
+                            <li>La página web tiene diseño responsive.</li>
+                        </ul>
+
+                        <h4>De programación</h4>
+                        <ul>
+                            <li>Las instrucciones son ocultables y pueden volver a mostrarse en cualquier momento.</li>
+                            <li>Cuando las instrucciones se muestran durante el juego, se muestra también una ayuda visual que indica donde están las minas.</li>
+                            <li>La pagina cumple con los estandares W3C.</li>
+                       </ul>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Cerrar</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- / Ventana modal -->
+
+    </div>
+
+</body>
+
+</html>
