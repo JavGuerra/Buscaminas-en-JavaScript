@@ -18,3 +18,5 @@ Estándares: TAW: Accesibilidad web | WAI-ARIA: Accesibilidad de contenidos din�
 * Las instrucciones son ocultables y pueden volver a mostrarse en cualquier momento.
 * Cuando las instrucciones se muestran durante el juego, se muestra también una ayuda visual que indica donde están las minas.
 * La pagina cumple con los estandares W3C.
+
+[Juegua online](https://javguerra.github.io/Buscaminas-en-JavaScript/index.html)
