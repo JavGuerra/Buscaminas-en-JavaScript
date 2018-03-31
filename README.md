@@ -6,17 +6,15 @@ Licencia Creative Commons de Atribución (CC-BY)
 
 Estándares: TAW: Accesibilidad web | WAI-ARIA: Accesibilidad de contenidos dinámicos
 
-##Característricas
+## Característricas
 
-###Graficas
+### Graficas
 
-    Se usa Bootstrap.
-    La página web tiene diseño responsive.
+* Se usa Bootstrap.
+* La página web tiene diseño responsive.
 
-###De programación
+### De programación
 
-    Las instrucciones son ocultables y pueden volver a mostrarse en cualquier momento.
-    Cuando las instrucciones se muestran durante el juego, se muestra también una ayuda visual que indica donde están las minas.
-    La pagina cumple con los estandares W3C.
-
-
+* Las instrucciones son ocultables y pueden volver a mostrarse en cualquier momento.
+* Cuando las instrucciones se muestran durante el juego, se muestra también una ayuda visual que indica donde están las minas.
+* La pagina cumple con los estandares W3C.
