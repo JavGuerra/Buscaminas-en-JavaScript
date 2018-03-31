@@ -1,0 +1,181 @@
+/* javguerra buscaminas v.1.0 abril 2017 */
+
+body {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.7em;
+    background: #E2E1E6 url(../imgs/fondo.jpg) center/cover no-repeat fixed;
+}
+
+small {
+    color: #337AB7 !important;
+}
+
+header,
+legend {
+    font-family: 'Black Ops One', cursive;
+    border-bottom: 10px !important;
+    text-align: center;
+    line-height: 1em;
+    color: #337AB7;
+}
+
+legend {
+    margin-bottom: 10px !important;
+}
+
+legend h2 {
+    font-size: 1.2em;
+}
+
+input {
+    width: 100% !important;
+}
+
+input,
+.alert {
+    margin-bottom: 20px !important;
+}
+
+.alert h2 {
+    color: #337AB7;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.alert-info {
+    color: #337AB7;
+}
+
+.ayuda {
+    color: Gray;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#btnInfo {
+    color: white;
+    font-size: 0.75em;
+}
+
+#btnAyuda {
+    color: LightGray;
+}
+
+label {
+    color: #337AB7;
+}
+
+footer {
+    color: #31708F;
+    border-top: #31708F 1px dotted;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+footer img {
+    margin: 7px 0 7px 7px;
+}
+
+.ocultar {
+    display: none !important;
+    visibility: hidden;
+}
+
+.center,
+.mensajes {
+    clear: both;
+    /* width: 60%; */
+    margin: auto;
+    padding: 10px;
+}
+
+.mensajes {
+    font-family: 'Black Ops One', cursive;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.titulo {
+    margin: auto;
+    text-align: center;
+}
+
+.tablerojuego {
+    border-style: solid;
+    border-width: medium;
+    border-collapse: separate;
+    border-color: #337AB7;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 25px #999999;
+}
+
+.tablerojuego td {
+    width: 15px;
+    height: 15px;
+    padding: 0px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #337AB7;
+    font-size: 57%;
+    text-align: center;
+}
+
+.selec {
+    background-color: #337AB7;
+}
+
+.mina {
+    background-color: red;
+    color: yellow;
+}
+
+.bandera {
+    background-color: #FFFF66;
+    color: red;
+}
+
+.hay {
+    background-color: #CCCCFF;
+}
+
+@media (max-width: 991px) {
+    .ocultarLogo {
+        display: none !important;
+        visibility: hidden;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    aside {
+        margin-bottom: 20px;
+    }
+    .tablerojuego {
+        padding: 10px;
+        box-shadow: 3px 3px 15px #999999;
+    }
+    .tablerojuego td {
+        width: 25px;
+        height: 25px;
+        font-size: 95%;
+    }
+}
+
+@media (min-width: 992px) {
+    .form-group {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .tablerojuego {
+        padding: 10px;
+        box-shadow: 3px 3px 15px #999999;
+    }
+    .tablerojuego td {
+        width: 25px;
+        height: 25px;
+        font-size: 95%;
+    }
+}
